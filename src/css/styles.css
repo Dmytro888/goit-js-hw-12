@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  max-height: 100vh;
+  width: 1000px;
+  background-color: #cccccc;
+}
+.info {
+  text-align: center;
+  font-family: monospace;
+}
+
+.info-title {
+  font-size: 72px;
+
+  margin-bottom: 25px;
+}
+.info p {
+  font-size: 42px;
+  font-weight: bold;
+}
+.info span {
+  font-weight: normal;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-container-data {
+  text-align: start;
+}
+
+.info-container-img {
+  width: 500px;
+}
