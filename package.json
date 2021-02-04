@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+// тут вставить url репозитория на гите"
+    "url": "git+https://github.com/Dmytro888/goit-js-hw-12"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "// тут вставить url репозитория на гите"
+    "url": "https://github.com/Dmytro888/goit-js-hw-12"
   },
   "homepage": "// тут вставить url GitHub Pages после команды npm run deploy",
   "devDependencies": {
