@@ -1,25 +1,43 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding-bottom: 25px;
 }
 
 body {
   max-height: 100vh;
-  width: 1000px;
-  background-color: #cccccc;
-}
-.info {
+  width: 1200px;
+  background-color: #e2e1de;
+  margin: 0 auto;
   text-align: center;
   font-family: monospace;
+}
+.country-list {
+  display: block;
+  font-size: 48px;
+  margin-top: 25px;
+  text-align: left;
+}
+
+input {
+  padding: 10px;
+  display: block;
+  min-width: 250px;
+  font-size: 48px;
+  height: 75px;
+  margin: 0 auto;
+  line-height: 75px;
+  margin-top: 25px;
+  display: block;
 }
 
 .info-title {
   font-size: 72px;
-
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 .info p {
-  font-size: 42px;
+  font-size: 38px;
   font-weight: bold;
 }
 .info span {
@@ -32,9 +50,17 @@ body {
 }
 
 .info-container-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   text-align: start;
 }
 
 .info-container-img {
-  width: 500px;
+  width: 550px;
+}
+
+.languages {
+  padding-left: 55px;
+  font-size: 38px;
 }

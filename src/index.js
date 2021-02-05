@@ -2,6 +2,10 @@ import debounce from 'lodash.debounce';
 import countryListTemp from './templates/country_list.hbs';
 import countryInfoTemp from './templates/country_info.hbs';
 import './css/styles.css';
+import PNotify from '../node_modules/pnotify/dist/es/PNotify.js';
+import '../node_modules/pnotify/dist/PNotifyBrightTheme.css';
+import fetchResult from './js/fetchCountries.js';
+
 const refInput = document.querySelector('input');
 
 refInput.addEventListener(
@@ -12,13 +16,24 @@ refInput.addEventListener(
 );
 
 function fetchCountryData (event) {
-  fetch(`https://restcountries.eu/rest/v2/name/${event.target.value}`)
-    .then(result => result.json())
+  const input = event.target.value;
+
+  fetchResult(input)
+    .then(response => {
+      if (response.status < 400) {
+        return response.json();
+      }
+    })
     .then(data => {
       removeList();
       addList(data);
       inputOutOfLimit(data);
       countryInfo(data);
+    })
+    .catch(error => {
+      PNotify.error({
+        text: 'NO MATCHES!!!',
+      });
     });
 }
 function countryInfo (data) {
@@ -29,12 +44,19 @@ function countryInfo (data) {
 }
 
 function inputOutOfLimit (data) {
-  if (data.length > 10) alert('Дохуя');
+  if (data.length > 10) {
+    PNotify.error({
+      text: 'Too many matches found. Please enter a more specific query!',
+    });
+  }
 }
 
 function removeList () {
   if (document.querySelector('.country-list')) {
     document.querySelector('.country-list').remove();
+  }
+  if (document.querySelector('.info')) {
+    document.querySelector('.info').remove();
   }
 }
 
