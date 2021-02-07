@@ -7,7 +7,12 @@
 body {
   max-height: 100vh;
   width: 1200px;
-  background-color: #e2e1de;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.603) 10%,
+    #b1b0ad8c 60%,
+    rgba(0, 0, 0, 0.603)
+  );
   margin: 0 auto;
   text-align: center;
   font-family: monospace;
@@ -24,11 +29,18 @@ input {
   display: block;
   min-width: 250px;
   font-size: 48px;
+  font-weight: 600;
   height: 75px;
   margin: 0 auto;
   line-height: 75px;
   margin-top: 25px;
   display: block;
+  text-align: center;
+  border-radius: 14px;
+  outline: none;
+  background-color: rgba(222, 223, 230, 0.945);
+  border: none;
+  box-shadow: 1px 1px 5px 3px #00000071;
 }
 
 .info-title {
@@ -47,17 +59,26 @@ input {
 .info-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .info-container-data {
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
   text-align: start;
+  padding: 25px;
+  border: 1px solid #00000023;
+  background-color: #ffffff1a;
+  box-shadow: 1px 1px 5px 1px #00000071;
 }
 
 .info-container-img {
   width: 550px;
+  box-shadow: 1px 1px 5px 3px #00000071;
+  background: 0ch;
+  padding: 0;
 }
 
 .languages {
